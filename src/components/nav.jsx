@@ -17,15 +17,20 @@ const Nav = () => {
         setSite(e)
     }
     useEffect(()=>{
-        console.log(socketResponse)
-        if(site == 'chat' && socketResponse?.inroom){
+
+        if(site == 'chat' && 'on' in socketResponse){
+
             if(socketResponse.inroom == selectedFriend || socketResponse.on){
                 setFriendConected(true)
             }else{
                 setFriendConected(false)
             }
-        }else if(site == 'chat' && socketResponse?.friendDisconected){
-            setFriendConected(false)
+        }else if(site == 'chat' && 'friendDisconected' in socketResponse){
+
+            if(socketResponse.who == selectedFriend){
+
+                setFriendConected(false)
+            }
         }
     },[socketResponse])
 

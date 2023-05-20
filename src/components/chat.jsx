@@ -34,9 +34,12 @@ const Chat = () => {
   }, []);
 
   useEffect(() => {
+    let name = localStorage.getItem("name");
+    if('con' in socketResponse){
+      if(socketResponse.inroom == name || socketResponse.on){
 
-    if(socketResponse?.con){
-      setConvers(socketResponse.con);
+        setConvers(socketResponse.con);
+      }
     }
   }, [socketResponse]);
 

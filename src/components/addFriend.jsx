@@ -17,7 +17,7 @@ const AddFriend = () =>{
         if(owner){
             let response =await axios.post('http://localhost:8000/api/addfriend',{owner:owner,nombre:text})
             if(response.data){
-                console.log(response.data)
+  
                 setMessage(response.data)
             }
         }

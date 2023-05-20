@@ -22,9 +22,7 @@ const Main = () =>{
         if(name){ 
             let response = await axios.post('http://localhost:8000/api/userinfo',{owner:name})
             setListFriends(response.data)
-            console.log('repedido')
-        }else{
-            console.log('no hay name')
+
         }
     }
 
@@ -41,7 +39,6 @@ const Main = () =>{
         let name = localStorage.getItem('name');
         
         name? setSite('main') : setSite('register');
-        console.log('hola eto es el main')
         
     },[])
 

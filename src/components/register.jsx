@@ -21,7 +21,6 @@ const sendUser =  async ()=>{
 
     let response = await axios.post('http://localhost:8000/api/register',{nombre:text});
     if('error' in response.data){
-        console.log(response)
         localStorage.setItem('name',text),
         setMessage(response.data)
     }

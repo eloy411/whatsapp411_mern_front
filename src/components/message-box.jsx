@@ -3,8 +3,6 @@
 
 const Message = (props)=>{
 
-    console.log(props)
-
     return (
         <div className={props.value.error === 0?"message-ok":"message-bad"}>
             <p>{props.value.message}</p>
